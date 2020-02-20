@@ -165,9 +165,10 @@ private:
 
     void onShutdown(boost::system::error_code ec)
     {
-        if (ec && ec != boost::asio::error::eof) {
-            this->c->failure(Unknown, "Unexpected error on shutdown: " + ec.message());
-        }
+       // if (ec && ec != boost::asio::error::eof) {
+       //     this->c->failure(Unknown, "Unexpected error on shutdown: " + ec.message());
+       // }
+       return;
         // If we get here then the connection is closed gracefully
     }
 };
