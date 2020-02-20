@@ -101,6 +101,7 @@ public:
     void prepareBody(typename RequestBody::value_type requestBody)
     {
         m_request.body() = requestBody;
+        m_request.prepare_payload();
     }
 
     void abort()
