@@ -44,7 +44,7 @@ public:
     void post(url&& uri, typename RequestBody::value_type requestBody, int maxRedirects = 0,
               bool basicAuth = false, int version = 11)
     {
-        performRequest(uri, boost::beast::http::verb::post, requestBody, maxRedirects, basicAuth,
+        performRequest(std::forward<url>(uri), boost::beast::http::verb::post, requestBody, maxRedirects, basicAuth,
                        version);
     }
 
